@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" id="meet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jitsi Iframe</title>
+    <script src='https://meet.jit.si/external_api.js'></script>
+    <script src="https://8x8.vc/libs/lib-jitsi-meet.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase.js"></script>
+    
+    <script>
+        let random4 = () => {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        let roomName = random4() + random4() + random4() + random4();
+    </script>
+    <script src="./index.js"></script>
+</head>
+
+<body onload="StartJitsiMeeting(roomName)">
+    <style>
+        #meet {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</body>
+</html>
